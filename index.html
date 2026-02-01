@@ -1,49 +1,113 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Bear Phone - Pro Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <style>
-        /* إعدادات الصفحة للطابعة */
-        @page {
-            size: 38mm 27mm;
-            margin: 0;
-        }
-        body {
-            margin: 0;
-            padding: 0;
-            width: 38mm;
-            height: 27mm;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
-            background-color: white;
-        }
-        /* حاوية الباركود */
-        .ticket-container {
-            width: 36mm; /* أصغر قليلاً من الملصق لترك مسافة أمان */
-            height: 25mm;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            overflow: hidden;
-        }
-        .store-name { font-size: 8pt; font-weight: bold; margin-bottom: 2px; }
-        .product-name { font-size: 7pt; line-height: 1; margin: 1px 0; }
-        .price { font-size: 9pt; font-weight: bold; margin-top: 1px; }
-        .barcode-img { width: 30mm; height: 8mm; object-fit: contain; }
+        body { font-family: 'Noto Kufi Arabic', sans-serif; background-color: #0f172a; color: white; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); border-color: #3b82f6; box-shadow: 0 10px 20px -10px #3b82f6; }
+        @keyframes pulse-soft { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+        .animate-pulse-soft { animation: pulse-soft 2s infinite; }
     </style>
 </head>
-<body onload="window.print()">
-    <div class="ticket-container">
-        <div class="store-name">دب فون</div>
-        
-        <img src="https://bwipjs-api.metafloor.com/?bcid=code128&text=12345678&scale=2&rotate=N&includetext" class="barcode-img">
-        
-        <div class="product-name">PROMAX HIGH 17 CLEAR</div>
-        <div class="price">السعر : 45.00 ريال</div>
+<body class="bg-[#0f172a]">
+
+<div class="max-w-[430px] mx-auto min-h-screen relative pb-24 shadow-2xl bg-[#0f172a]">
+    <header class="p-5 flex justify-between items-center glass sticky top-0 z-50">
+        <div class="flex items-center gap-2">
+            <div class="bg-blue-600 p-1.5 rounded-xl shadow-lg shadow-blue-900/20">
+                <span class="material-icons text-white text-xl">smart_toy</span>
+            </div>
+            <h2 class="text-xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Bear Phone</h2>
+        </div>
+        <div class="text-[10px] bg-blue-900/30 text-blue-400 px-3 py-1 rounded-full border border-blue-500/30 font-bold uppercase tracking-wider">Online Now</div>
+    </header>
+
+    <div class="p-5 space-y-6">
+        <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600 to-indigo-900 p-8 shadow-2xl shadow-blue-900/40">
+            <div class="relative z-10">
+                <span class="bg-white/20 text-white text-[10px] px-2 py-1 rounded-md font-bold uppercase mb-2 inline-block">New Release</span>
+                <h1 class="text-3xl font-extrabold mb-2 leading-tight">iPhone 15 Pro</h1>
+                <p class="text-blue-100 text-sm mb-6 opacity-90">قوة التيتانيوم بين يديك الآن بأفضل الأسعار.</p>
+                <button class="bg-white text-blue-900 px-6 py-3 rounded-2xl font-bold text-sm shadow-xl hover:scale-105 transition-transform">اكتشف المزيد</button>
+            </div>
+            <span class="material-icons absolute -bottom-4 -left-4 text-[150px] text-white/10 rotate-12">smartphone</span>
+        </div>
+
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+            <span class="w-1 h-6 bg-blue-600 rounded-full"></span>
+            خدماتنا التقنية
+        </h3>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="glass p-5 rounded-3xl flex flex-col items-center gap-3 card-hover cursor-pointer group">
+                <div class="bg-blue-500/10 p-3 rounded-2xl group-hover:bg-blue-500/20 transition-colors">
+                    <span class="material-icons text-blue-500 text-3xl">headphones</span>
+                </div>
+                <span class="block font-bold text-xs text-gray-100">الإكسسوارات</span>
+            </div>
+
+            <div onclick="window.location.href='https://wa.me/966548230051?text=مرحباً Bear Phone، أرغب في طلب خدمة برمجة لجهازي'" 
+                 class="glass p-5 rounded-3xl flex flex-col items-center gap-3 card-hover cursor-pointer border-purple-500/20 group">
+                <div class="bg-purple-500/10 p-3 rounded-2xl group-hover:bg-purple-500/20 transition-colors">
+                    <span class="material-icons text-purple-500 text-3xl">code</span>
+                </div>
+                <span class="block font-bold text-xs text-gray-100 text-purple-400">البرمجة</span>
+            </div>
+
+            <div onclick="window.location.href='https://wa.me/966548230051?text=مرحباً Bear Phone، أحتاج خدمة صيانة لجهازي'" 
+                 class="glass p-5 rounded-3xl flex flex-row items-center justify-center gap-4 card-hover cursor-pointer border-green-500/20 col-span-2 group">
+                <div class="bg-green-500/10 p-3 rounded-2xl group-hover:bg-green-500/20 transition-colors relative">
+                    <span class="material-icons text-green-500 text-3xl">build</span>
+                    <span class="absolute top-0 right-0 flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </span>
+                </div>
+                <div class="text-right">
+                    <span class="block font-bold text-sm text-gray-100">طلب صيانة تقنية</span>
+                    <span class="text-[10px] text-green-400 font-bold animate-pulse-soft">متوفر الآن</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-4">
+            <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                <span class="w-1 h-6 bg-blue-600 rounded-full"></span>
+                الأقسام المميزة
+            </h3>
+            <div class="space-y-3 pb-10">
+                <div class="glass p-4 rounded-2xl flex items-center justify-between card-hover cursor-pointer">
+                    <div class="flex items-center gap-3">
+                        <span class="material-icons text-blue-400">bolt</span>
+                        <span class="text-sm font-bold text-gray-200">حلول الشحن السريع</span>
+                    </div>
+                    <span class="material-icons text-gray-600">chevron_left</span>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-[380px] glass rounded-3xl p-2 flex justify-around items-center shadow-2xl border-white/5 z-50">
+        <button class="p-3 bg-blue-600 rounded-2xl text-white">
+            <span class="material-icons">home</span>
+        </button>
+        <button class="p-3 text-gray-500">
+            <span class="material-icons">grid_view</span>
+        </button>
+        <button class="p-3 text-gray-500">
+            <span class="material-icons">shopping_cart</span>
+        </button>
+        <button class="p-3 text-gray-500">
+            <span class="material-icons">person</span>
+        </button>
+    </nav>
+</div>
+
 </body>
 </html>
