@@ -63,9 +63,13 @@
 
     let currentLang = 'en';
 
+    
     function openWhatsApp() {
-        const message = currentLang === 'ar' ? "مرحباً Bear Phone، أحتاج إلى خدمة صيانة لجهازي." : "Hello Bear Phone, I need a maintenance service for my device.";
-        window.location.href = ⁠ https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)} ⁠;
+        const msg = "مرحباً Bear Phone، أرغب في طلب صيانة لجهازي.";
+        const url = "https://api.whatsapp.com/send?phone=" + myNumber + "&text=" + encodeURIComponent(msg);
+        
+        // محاولة فتح الواتساب في نافذة جديدة لضمان التوافق
+        window.open(url
     }
 
     function toggleLanguage() {
