@@ -1,194 +1,79 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2759
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset178 GeezaPro;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh9000\viewkind0
-\pard\tqr\tx720\tqr\tx1440\tqr\tx2160\tqr\tx2880\tqr\tx3600\tqr\tx4320\tqr\tx5040\tqr\tx5760\tqr\tx6480\tqr\tx7200\tqr\tx7920\tqr\tx8640\pardirnatural\partightenfactor0
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Bear Phone - Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    
+    <style>
+        body { font-family: 'Noto Kufi Arabic', sans-serif; background-color: #111621; color: white; }
+        .hidden-page { display: none; }
+        .material-icons { vertical-align: middle; }
+    </style>
+</head>
+<body class="bg-[#111621]">
 
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html class="dark" lang="en">\
-<head>\
-    <meta charset="utf-8"/>\
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>\
-    <title>Bear Phone - Full App</title>\
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>\
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;700&display=swap" rel="stylesheet"/>\
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>\
-    \
-    <script id="tailwind-config">\
-        tailwind.config = \{\
-            darkMode: "class",\
-            theme: \{\
-                extend: \{\
-                    colors: \{\
-                        "primary": "#195de6",\
-                        "background-dark": "#111621",\
-                        "card-dark": "#1a2232",\
-                        "border-dark": "#344465"\
-                    \},\
-                    fontFamily: \{ "display": ["Inter", "Noto Kufi Arabic", "sans-serif"] \}\
-                \},\
-            \},\
-        \}\
-    </script>\
-    <style>\
-        .material-symbols-outlined \{ font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; \}\
-        body \{ font-family: 'Inter', 'Noto Kufi Arabic', sans-serif; transition: all 0.3s ease; overflow-x: hidden; \}\
-        .hidden-page \{ display: none; \}\
-        .page-transition \{ animation: fadeIn 0.4s ease-out; \}\
-        @keyframes fadeIn \{ from \{ opacity: 0; transform: translateY(10px); \} to \{ opacity: 1; transform: translateY(0); \} \}\
-        [dir="rtl"] .flip-rtl \{ transform: scaleX(-1); \}\
-    </style>\
-</head>\
-<body class="bg-background-dark text-white">\
-\
-<div class="max-w-[430px] mx-auto min-h-screen relative shadow-2xl bg-background-dark">\
-\
-    <header class="sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md p-4 flex justify-between items-center border-b border-border-dark">\
-        <div id="header-back" class="hidden flex items-center shrink-0">\
-            <button onclick="showPage('page-home')" class="p-1"><span class="material-symbols-outlined flip-rtl">arrow_back_ios</span></button>\
-        </div>\
-        <div class="flex items-center gap-2 flex-1 justify-center">\
-            <div class="bg-primary text-white p-1 rounded-lg"><span class="material-symbols-outlined block text-sm">smart_toy</span></div>\
-            <h2 class="text-primary text-lg font-bold" id="txt-logo">Bear Phone</h2>\
-        </div>\
-        <div onclick="toggleLanguage()" class="cursor-pointer flex items-center bg-slate-800 rounded-full border border-border-dark px-3 py-1 gap-2 shadow-inner">\
-            <span id="lang-en" class="text-[10px] font-bold text-primary">EN</span>\
-            <span id="lang-ar" class="text-[10px] font-bold text-gray-500">AR</span>\
-        </div>\
-    </header>\
-\
-    <div id="page-home" class="page-transition flex flex-col pb-24">\
-        <div class="px-4 mt-4">\
-            <div class="relative bg-gradient-to-br from-primary to-blue-700 rounded-2xl p-6 text-white overflow-hidden shadow-lg">\
-                <h1 id="txt-hero-title" class="text-2xl font-bold mb-1">iPhone 15 Pro</h1>\
-                <p class="text-white/80 text-xs mb-4">Powerful. Light. Titanium.</p>\
-                <button onclick="showPage('page-checkout')" id="txt-hero-btn" class="bg-white text-primary text-xs font-bold px-4 py-2 rounded-lg hover:bg-gray-100 transition-all">Shop Now</button>\
-            </div>\
-        </div>\
-\
-        <div class="px-4 pt-8">\
-            <h3 id="txt-cat-title" class="text-base font-bold mb-4">Quick Services</h3>\
-            <div class="grid grid-cols-2 gap-4">\
-                <div onclick="showPage('page-accessories')" class="bg-card-dark p-5 rounded-2xl border border-border-dark flex flex-col items-center gap-2 cursor-pointer hover:border-primary">\
-                    <span class="material-symbols-outlined text-primary text-3xl">headphones</span>\
-                    <span id="txt-cat-acc" class="text-xs font-bold">Accessories</span>\
-                </div>\
-                <div onclick="showPage('page-maintenance')" class="bg-card-dark p-5 rounded-2xl border border-border-dark flex flex-col items-center gap-2 cursor-pointer hover:border-primary">\
-                    <span class="material-symbols-outlined text-primary text-3xl">build</span>\
-                    <span id="txt-cat-main" class="text-xs font-bold">Maintenance</span>\
-                </div>\
-            </div>\
-        </div>\
-    </div>\
-\
-    <div id="page-maintenance" class="hidden-page page-transition flex flex-col p-4 pb-24">\
-        <h3 id="txt-main-title" class="text-lg font-bold mb-2 text-center">Request Repair</h3>\
-        <p id="txt-main-desc" class="text-xs text-gray-400 text-center mb-6">Describe your phone problem and we'll fix it</p>\
-        \
-        <div class="space-y-4">\
-            <div>\
-                <label id="lbl-device" class="text-xs font-bold text-gray-400 block mb-2">Device Model</label>\
-                <input id="ph-device" class="w-full bg-card-dark border border-border-dark rounded-xl p-4 text-sm focus:border-primary outline-none" placeholder="e.g. iPhone 13 Pro Max">\
-            </div>\
-            <div>\
-                <label id="lbl-issue" class="text-xs font-bold text-gray-400 block mb-2">Problem Description</label>\
-                <textarea id="ph-issue" class="w-full bg-card-dark border border-border-dark rounded-xl p-4 text-sm h-32 focus:border-primary outline-none" placeholder="Describe what's wrong..."></textarea>\
-            </div>\
-            <div>\
-                <label id="lbl-type" class="text-xs font-bold text-gray-400 block mb-2">Service Type</label>\
-                <select class="w-full bg-card-dark border border-border-dark rounded-xl p-4 text-sm focus:border-primary outline-none appearance-none">\
-                    <option id="opt-1">Hardware Repair (Screen, Battery...)</option>\
-                    <option id="opt-2">Software & Programming</option>\
-                </select>\
-            </div>\
-            <button onclick="alert('Maintenance Request Sent!')" id="btn-submit-main" class="w-full bg-primary py-4 rounded-xl font-bold mt-4 shadow-lg">Submit Request</button>\
-        </div>\
-    </div>\
-\
-    <div id="page-accessories" class="hidden-page page-transition flex flex-col pb-24">\
-        <div class="grid grid-cols-2 gap-4 px-4 mt-4">\
-            <div class="bg-card-dark rounded-2xl p-4 border border-border-dark text-center">\
-                <span class="material-symbols-outlined text-primary text-4xl mb-2">cable</span>\
-                <h4 class="text-xs font-bold" id="acc-1">Original Cable</h4>\
-                <p class="text-primary font-bold mt-2">$19</p>\
-                <button onclick="showPage('page-checkout')" class="bg-primary/10 text-primary w-full py-2 rounded-lg mt-3 text-[10px] font-bold">Buy Now</button>\
-            </div>\
-            <div class="bg-card-dark rounded-2xl p-4 border border-border-dark text-center">\
-                <span class="material-symbols-outlined text-primary text-4xl mb-2">shutter_speed</span>\
-                <h4 class="text-xs font-bold" id="acc-2">Screen Protector</h4>\
-                <p class="text-primary font-bold mt-2">$15</p>\
-                <button onclick="showPage('page-checkout')" class="bg-primary/10 text-primary w-full py-2 rounded-lg mt-3 text-[10px] font-bold">Buy Now</button>\
-            </div>\
-        </div>\
-    </div>\
-\
-    <div id="page-checkout" class="hidden-page page-transition p-4 pb-32">\
-        <h3 id="txt-pay-title" class="font-bold mb-6">Checkout</h3>\
-        <div class="bg-card-dark p-6 rounded-2xl border border-border-dark space-y-4">\
-            <input class="w-full bg-background-dark border border-border-dark rounded-xl p-4 text-sm" id="ph-card" placeholder="Card Number">\
-            <div class="flex gap-4">\
-                <input class="w-1/2 bg-background-dark border border-border-dark rounded-xl p-4 text-sm" placeholder="MM/YY">\
-                <input class="w-1/2 bg-background-dark border border-border-dark rounded-xl p-4 text-sm" placeholder="CVV">\
-            </div>\
-            <button class="w-full bg-primary py-4 rounded-xl font-bold mt-4" id="btn-final-pay">Pay $1,299</button>\
-        </div>\
-    </div>\
-\
-    <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-slate-900/90 backdrop-blur-md border-t border-border-dark flex justify-around py-4 z-50">\
-        <span onclick="showPage('page-home')" class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">home</span>\
-        <span onclick="showPage('page-accessories')" class="material-symbols-outlined text-gray-500 cursor-pointer hover:text-primary">grid_view</span>\
-        <span onclick="showPage('page-maintenance')" class="material-symbols-outlined text-gray-500 cursor-pointer hover:text-primary">build</span>\
-        <span onclick="showPage('page-checkout')" class="material-symbols-outlined text-gray-500 cursor-pointer hover:text-primary">shopping_cart</span>\
-    </div>\
-</div>\
-\
-<script>\
-    let currentLang = 'en';\
-\
-    function showPage(pageId) \{\
-        document.querySelectorAll('[id^="page-"]').forEach(p => p.classList.add('hidden-page'));\
-        document.getElementById(pageId).classList.remove('hidden-page');\
-        document.getElementById('header-back').classList.toggle('hidden', pageId === 'page-home');\
-        window.scrollTo(0,0);\
-    \}\
-\
-    function toggleLanguage() \{\
-        currentLang = currentLang === 'en' ? 'ar' : 'en';\
-        document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';\
-        \
-        const translations = \{\
-            'en': \{\
-                'txt-logo': 'Bear Phone', 'txt-hero-title': 'iPhone 15 Pro', 'txt-hero-btn': 'Shop Now',\
-                'txt-cat-title': 'Quick Services', 'txt-cat-acc': 'Accessories', 'txt-cat-main': 'Maintenance',\
-                'txt-main-title': 'Request Repair', 'txt-main-desc': 'Tell us what is wrong', 'lbl-device': 'Device Model',\
-                'lbl-issue': 'Problem Description', 'lbl-type': 'Service Type', 'btn-submit-main': 'Submit Request',\
-                'ph-device': 'e.g. iPhone 13 Pro', 'ph-issue': 'Describe here...', 'opt-1': 'Hardware Repair',\
-                'opt-2': 'Software & Programming', 'acc-1': 'Original Cable', 'acc-2': 'Screen Protector',\
-                'txt-pay-title': 'Secure Checkout', 'ph-card': 'Card Number', 'btn-final-pay': 'Pay $1,299'\
-            \},\
-            'ar': \{\
-                'txt-logo': '\'c8\'ed\'d1 \'dd\'e6\'e4', 'txt-hero-title': '\'c2\'ed\'dd\'e6\'e4 15 \'c8\'d1\'e6', 'txt-hero-btn': '\'ca\'d3\'e6\'de \'c7\'e1\'c2\'e4',\
-                'txt-cat-title': '\'ce\'cf\'e3\'c7\'ca \'d3\'d1\'ed\'da\'c9', 'txt-cat-acc': '\'c7\'e1\'c5\'df\'d3\'d3\'e6\'c7\'d1\'c7\'ca', 'txt-cat-main': '\'c7\'e1\'d5\'ed\'c7\'e4\'c9',\
-                'txt-main-title': '\'d8\'e1\'c8 \'c5\'d5\'e1\'c7\'cd', 'txt-main-desc': '\'c3\'ce\'c8\'d1\'e4\'c7 \'c8\'e3\'d4\'df\'e1\'c9 \'cc\'e5\'c7\'d2\'df', 'lbl-device': '\'e3\'e6\'cf\'ed\'e1 \'c7\'e1\'cc\'e5\'c7\'d2',\
-                'lbl-issue': '\'e6\'d5\'dd \'c7\'e1\'e3\'d4\'df\'e1\'c9', 'lbl-type': '\'e4\'e6\'da \'c7\'e1\'ce\'cf\'e3\'c9', 'btn-submit-main': '\'c5\'d1\'d3\'c7\'e1 \'c7\'e1\'d8\'e1\'c8',\
-                'ph-device': '\'e3\'cb\'e1\'c7\'f0: \'c2\'ed\'dd\'e6\'e4 13 \'c8\'d1\'e6', 'ph-issue': '\'c7\'d4\'d1\'cd \'c7\'e1\'e3\'d4\'df\'e1\'c9 \'e5\'e4\'c7...', 'opt-1': '\'c5\'d5\'e1\'c7\'cd \'e5\'c7\'d1\'cf\'e6\'ed\'d1 (\'d4\'c7\'d4\'c9\'a1 \'c8\'d8\'c7\'d1\'ed\'c9)',\
-                'opt-2': '\'d3\'e6\'dd\'ca\'e6\'ed\'d1 \'e6\'c8\'d1\'e3\'cc\'c9', 'acc-1': '\'d3\'e1\'df \'c3\'d5\'e1\'ed', 'acc-2': '\'cd\'e3\'c7\'ed\'c9 \'d4\'c7\'d4\'c9',\
-                'txt-pay-title': '\'cf\'dd\'da \'c2\'e3\'e4', 'ph-card': '\'d1\'de\'e3 \'c7\'e1\'c8\'d8\'c7\'de\'c9', 'btn-final-pay': '\'c7\'cf\'dd\'da $1,299'\
-            \}\
-        \};\
-\
-        const t = translations[currentLang];\
-        for (let key in t) \{\
-            const el = document.getElementById(key);\
-            if (el) \{\
-                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = t[key];\
-                else el.innerText = t[key];\
-            \}\
-        \}\
-        document.getElementById('lang-en').classList.toggle('text-primary', currentLang === 'en');\
-        document.getElementById('lang-ar').classList.toggle('text-primary', currentLang === 'ar');\
-    \}\
-</script>\
-</body>\
-</html>}
+<div class="max-w-[430px] mx-auto min-h-screen relative shadow-2xl bg-[#111621] border-x border-gray-800">
+    <header class="p-4 flex justify-between items-center border-b border-gray-800 sticky top-0 bg-[#111621]/90 backdrop-blur-md z-50">
+        <div class="flex items-center gap-2">
+            <div class="bg-blue-600 text-white p-1 rounded-lg"><span class="material-icons">smart_toy</span></div>
+            <h2 class="text-blue-500 text-lg font-bold" id="txt-logo">Bear Phone</h2>
+        </div>
+        <div onclick="toggleLanguage()" class="cursor-pointer bg-gray-800 rounded-full px-4 py-1 flex gap-2 border border-gray-700">
+            <span id="lang-en" class="text-xs font-bold text-blue-500">EN</span>
+            <span id="lang-ar" class="text-xs font-bold text-gray-500">AR</span>
+        </div>
+    </header>
+
+    <div id="page-home" class="p-4 pb-24">
+        <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-6 text-white mb-8 shadow-lg">
+            <h1 class="text-2xl font-bold mb-2" id="txt-hero-title">iPhone 15 Pro</h1>
+            <p class="text-blue-100 text-xs mb-4">Powerful. Light. Titanium.</p>
+            <button class="bg-white text-blue-600 px-6 py-2 rounded-xl font-bold text-sm">Shop Now</button>
+        </div>
+
+        <h3 class="font-bold mb-4" id="txt-services">Quick Services</h3>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl flex flex-col items-center gap-2">
+                <span class="material-icons text-blue-500 text-3xl">headphones</span>
+                <span class="text-xs font-bold" id="txt-cat-acc">Accessories</span>
+            </div>
+            <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl flex flex-col items-center gap-2">
+                <span class="material-icons text-blue-500 text-3xl">build</span>
+                <span class="text-xs font-bold" id="txt-cat-main">Maintenance</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-gray-900 border-t border-gray-800 flex justify-around py-4">
+        <span class="material-icons text-blue-500">home</span>
+        <span class="material-icons text-gray-500">grid_view</span>
+        <span class="material-icons text-gray-500">shopping_cart</span>
+        <span class="material-icons text-gray-500">person</span>
+    </div>
+</div>
+
+<script>
+    let currentLang = 'en';
+    function toggleLanguage() {
+        currentLang = currentLang === 'en' ? 'ar' : 'en';
+        document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+        const t = {
+            en: { logo: 'Bear Phone', hero: 'iPhone 15 Pro', services: 'Quick Services', acc: 'Accessories', main: 'Maintenance' },
+            ar: { logo: 'بير فون', hero: 'آيفون 15 برو', services: 'خدمات سريعة', acc: 'الإكسسوارات', main: 'الصيانة' }
+        };
+        document.getElementById('txt-logo').innerText = t[currentLang].logo;
+        document.getElementById('txt-hero-title').innerText = t[currentLang].hero;
+        document.getElementById('txt-services').innerText = t[currentLang].services;
+        document.getElementById('txt-cat-acc').innerText = t[currentLang].acc;
+        document.getElementById('txt-cat-main').innerText = t[currentLang].main;
+        
+        document.getElementById('lang-en').style.color = currentLang === 'en' ? '#3b82f6' : '#6b7280';
+        document.getElementById('lang-ar').style.color = currentLang === 'ar' ? '#3b82f6' : '#6b7280';
+    }
+</script>
+</body>
+</html>
