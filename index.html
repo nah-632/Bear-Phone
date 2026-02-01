@@ -1,93 +1,33 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Bear Phone - WhatsApp Ready</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Bear Phone Store</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    
     <style>
-        body { font-family: 'Noto Kufi Arabic', sans-serif; background-color: #111621; color: white; }
-        .material-icons { vertical-align: middle; }
+        body { font-family: sans-serif; background-color: #111621; color: white; }
     </style>
 </head>
 <body class="bg-[#111621]">
+    <div class="max-w-[430px] mx-auto min-h-screen relative bg-[#111621]">
+        <header class="p-4 border-b border-gray-800 flex justify-between items-center">
+            <h2 class="text-blue-500 font-bold">Bear Phone</h2>
+        </header>
 
-<div class="max-w-[430px] mx-auto min-h-screen relative shadow-2xl bg-[#111621] border-x border-gray-800">
-    <header class="p-4 flex justify-between items-center border-b border-gray-800 sticky top-0 bg-[#111621]/90 backdrop-blur-md z-50">
-        <div class="flex items-center gap-2">
-            <div class="bg-blue-600 text-white p-1 rounded-lg"><span class="material-icons">smart_toy</span></div>
-            <h2 class="text-blue-500 text-lg font-bold" id="txt-logo">Bear Phone</h2>
-        </div>
-        <div onclick="toggleLanguage()" class="cursor-pointer bg-gray-800 rounded-full px-4 py-1 flex gap-2 border border-gray-700">
-            <span id="lang-en" class="text-xs font-bold text-blue-500">EN</span>
-            <span id="lang-ar" class="text-xs font-bold text-gray-500">AR</span>
-        </div>
-    </header>
-
-    <div class="p-4 pb-24">
-        <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-6 text-white mb-8 shadow-lg">
-            <h1 class="text-2xl font-bold mb-2" id="txt-hero-title">iPhone 15 Pro</h1>
-            <p class="text-blue-100 text-xs mb-4">Powerful. Light. Titanium.</p>
-            <button class="bg-white text-blue-600 px-6 py-2 rounded-xl font-bold text-sm">Shop Now</button>
-        </div>
-
-        <h3 class="font-bold mb-4" id="txt-services">Quick Services</h3>
-        <div class="grid grid-cols-2 gap-4">
-            <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl flex flex-col items-center gap-2 cursor-pointer hover:border-blue-500 transition-all">
-                <span class="material-icons text-blue-500 text-3xl">headphones</span>
-                <span class="text-xs font-bold" id="txt-cat-acc">Accessories</span>
+        <div class="p-4">
+            <div class="bg-blue-600 rounded-2xl p-6 mb-8 text-center">
+                <h1 class="text-xl font-bold">متجر بير فون</h1>
+                <p class="text-xs opacity-80">صيانة وبيع إكسسوارات</p>
             </div>
-            
-            <div onclick="openWhatsApp()" class="bg-gray-900 border border-gray-800 p-6 rounded-2xl flex flex-col items-center gap-2 cursor-pointer hover:border-green-500 transition-all">
-                <span class="material-icons text-green-500 text-3xl">build</span>
-                <span class="text-xs font-bold" id="txt-cat-main">Maintenance</span>
+
+            <div onclick="window.location.href='https://wa.me/966548230051?text=مرحباً، أحتاج خدمة صيانة'" 
+                 class="bg-gray-900 border border-gray-800 p-8 rounded-2xl flex flex-col items-center gap-4 cursor-pointer hover:border-green-500">
+                <span class="material-icons text-green-500 text-5xl">build</span>
+                <span class="text-lg font-bold text-green-500">اطلب صيانة الآن (واتساب)</span>
             </div>
         </div>
     </div>
-
-    <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-gray-900 border-t border-gray-800 flex justify-around py-4">
-        <span class="material-icons text-blue-500">home</span>
-        <span class="material-icons text-gray-500">grid_view</span>
-        <span class="material-icons text-gray-500">shopping_cart</span>
-        <span class="material-icons text-gray-500">person</span>
-    </div>
-</div>
-
-<script>
-    // --- ضع رقمك هنا بدون (+) ---
-    const myPhoneNumber = "966548230051"; 
-    // ----------------------------
-
-    let currentLang = 'en';
-
-    
-    function openWhatsApp() {
-        const msg = "مرحباً Bear Phone، أرغب في طلب صيانة لجهازي.";
-        const url = "https://api.whatsapp.com/send?phone=" + myNumber + "&text=" + encodeURIComponent(msg);
-        
-        // محاولة فتح الواتساب في نافذة جديدة لضمان التوافق
-        window.open(url
-    }
-
-    function toggleLanguage() {
-        currentLang = currentLang === 'en' ? 'ar' : 'en';
-        document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-        const t = {
-            en: { logo: 'Bear Phone', hero: 'iPhone 15 Pro', services: 'Quick Services', acc: 'Accessories', main: 'Maintenance' },
-            ar: { logo: 'بير فون', hero: 'آيفون 15 برو', services: 'خدمات سريعة', acc: 'الإكسسوارات', main: 'الصيانة' }
-        };
-        document.getElementById('txt-logo').innerText = t[currentLang].logo;
-        document.getElementById('txt-hero-title').innerText = t[currentLang].hero;
-        document.getElementById('txt-services').innerText = t[currentLang].services;
-        document.getElementById('txt-cat-acc').innerText = t[currentLang].acc;
-        document.getElementById('txt-cat-main').innerText = t[currentLang].main;
-        
-        document.getElementById('lang-en').style.color = currentLang === 'en' ? '#3b82f6' : '#6b7280';
-        document.getElementById('lang-ar').style.color = currentLang === 'ar' ? '#3b82f6' : '#6b7280';
-    }
-</script>
 </body>
 </html>
