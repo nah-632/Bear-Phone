@@ -2,7 +2,10 @@ backend:
   name: github
   repo: nah-632/Bear-Phone
   branch: main
-  auth_type: implicit # هذا السطر سيسمح لك بالدخول عبر حساب GitHub مباشرة
+  # السطرين التاليين هما الحل لتجاوز الشاشة السوداء
+  site_domain: nah-632.github.io
+  display_url: https://nah-632.github.io/Bear-Phone/
+  auth_type: implicit 
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
@@ -17,4 +20,3 @@ collections:
       - { label: "اسم المنتج", name: "title", widget: "string" }
       - { label: "السعر", name: "price", widget: "number" }
       - { label: "صورة المنتج", name: "image", widget: "image" }
-
